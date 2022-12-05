@@ -1,0 +1,74 @@
+/* _footer.scss */
+.footerCheckout {
+    border-top: none;
+    color: $color-gray2;
+
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__address {
+        color: $color-gray2;
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        text-transform: capitalize;
+        max-width: 40%;
+
+        @include mq(md, max) {
+            margin-bottom: 24px;
+            max-width: 100%;
+        }
+    }
+
+    &__stamps {
+        align-items: center;
+        display: flex;
+        justify-self: center;
+        list-style: none;
+
+        @include mq(md, max) {
+            align-self: center;
+            margin-bottom: 12px;
+        }
+
+        &__divider {
+            background-color: $color-gray4;
+            display: inline-block;
+            height: 24px;
+            margin: 0 8px;
+            width: 1px;
+        }
+    }
+
+    &__developedBy {
+        align-items: center;
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+
+        li:last-child {
+            margin-left: 16px;
+        }
+
+        a {
+            align-items: center;
+            color: $color-gray2;
+            display: flex;
+            font-family: $font-family;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 12px;
+            text-decoration: none;
+
+            span {
+                margin-right: 8px;
+            }
+        }
+    }
+}
