@@ -17,4 +17,11 @@ export default class Footer {
             interval: 1000, // vai verificar a cada 1 segundo se o elemento existe
         });
     }
+    async addCarrossel() {
+        const elemento = await waitElement("#my-element");
+        $(elemento).slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+        });
+    }
 }

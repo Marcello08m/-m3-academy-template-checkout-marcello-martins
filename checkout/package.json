@@ -24,6 +24,7 @@
         "jquery": "^3.6.0",
         "m3-utils": "^0.1.0",
         "sass": "^1.38.1",
+        "slick-carousel": "^1.8.1",
         "terser-webpack-plugin": "^5.1.4"
     },
     "devDependencies": {
