@@ -1,5 +1,6 @@
 import CheckoutUI from "./components/CheckoutUI";
 import { Container } from "m3-utils";
+import "slick-carousel";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
