@@ -32,6 +32,10 @@ const paths = {
         src: "src/arquivos/assets/imgs/**",
         watch: "src/arquivos/assets/imgs/**",
     },
+    svg: {
+        src: "src/arquivos/assets/svgs/**",
+        watch: "src/arquivos/assets/svgs/**",
+    },
     fonts: {
         src: "src/arquivos/assets/fonts/**.*",
     },
@@ -39,6 +43,7 @@ const paths = {
     outputStatic: "dist/arquivos",
     outputStaticFonts: "dist/arquivos/fonts",
     outputStaticImages: "dist/arquivos/imgs",
+    outputStaticSvgs: "dist/arquivos/svgs",
     tmp: ".temp",
 };
 
@@ -107,6 +112,9 @@ function images() {
         .pipe(gulp.dest(paths.outputStaticImages))
         .pipe(connect.reload());
 }
+function svgs() {
+    return gulp.src(paths.svg.watch).pipe(gulp.dest(paths.outputStaticSvgs)).pipe(connect.reload());
+}
 function customFonts() {
     return gulp
         .src(paths.fonts.src)
@@ -127,6 +135,7 @@ function watch() {
     gulp.watch(paths.styles.watch, { ignoreInitial: false }, styles);
     gulp.watch(paths.fonts.src, { ignoreInitial: false }, customFonts);
     gulp.watch(paths.img.src, { ignoreInitial: false }, images);
+    gulp.watch(paths.svg.src, { ignoreInitial: false }, svgs);
 }
 
 function devServer() {
