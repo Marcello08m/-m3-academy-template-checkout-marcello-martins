@@ -5,12 +5,34 @@ export default class Footer {
         this.init();
     }
 
+    payments() {
+        this.paymentTypesIconsContainer.innerHTML = "";
+        const paymentTypes = [
+            "masterCardM3Academy",
+            "visaM3Academy",
+            "amexM3Academy",
+            "eloM3Academy",
+            "hiperCardM3Academy",
+            "paypalM3Academy",
+            "boletoM3Academy",
+        ];
+        paymentTypes.forEach((paymentType) => {
+            const image = document.createElement("img");
+            image.src = `https://agenciamagma.vteximg.com.br/arquivos/${paymentType}.png`;
+            this.paymentTypesIconsContainer.appendChild(image);
+        });
+    }
+
     async init() {
         await this.selectors();
+        this.payments();
         // this.onUpdate();
     }
 
     async selectors() {
+        this.paymentTypesIconsContainer = await waitElement(
+            ".footerCheckout__stamps li:first-of-type"
+        );
         //Para verificar se o carrinho está vazio e remover a prateleira de produtos:
         // vocês devem olhar a doc fornecida no Desafio para aprender a usar o waitElement
         this.checkoutVazio = await waitElement(".empty-cart-content");
