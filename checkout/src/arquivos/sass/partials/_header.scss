@@ -1,10 +1,14 @@
-/* _header.scss */
 .headerCheckout {
+    width: 100%;
+    border-bottom: 1px solid $color-black;
+
     .container {
         width: auto !important;
     }
     &__wrapper {
+        padding: 0 130px;
         align-items: center;
+        margin: 30px 0;
         display: flex;
         justify-content: space-between;
     }
@@ -18,19 +22,22 @@
 
     &__safeBuy {
         span {
+            // display: flex;
             align-items: center;
-            display: flex;
+            justify-content: center;
             text-transform: uppercase;
             font-family: $font-family;
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
-            line-height: 14px;
-            color: $color-gray;
+            height: 17px;
+            line-height: 16px;
+            color: $color-black;
         }
 
-        i {
+        img {
             margin-right: 8px;
+            height: 15px;
         }
     }
 }
